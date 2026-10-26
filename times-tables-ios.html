@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Times Tables">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#e6f0ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1932" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Times Tables Flashcards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e6f0ff;
+  --card: #ffffff;
+  --ink: #1b2a57;
+  --muted: #5b6a94;
+  --line: #c9d7f5;
+  --blue: #3a6df0;
+  --blue-ink: #ffffff;
+  --sun: #ffc83d;
+  --sun-ink: #3d2c00;
+  --good: #1fa97a;
+  --good-bg: #d8f5ea;
+  --bad: #e5484d;
+  --bad-bg: #ffe1e2;
+  --shadow: 0 6px 0 #b9cbf2;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1932;
+    --card: #1a2750;
+    --ink: #f1f4ff;
+    --muted: #9fb0e0;
+    --line: #2f4180;
+    --blue: #6f95ff;
+    --blue-ink: #0b1430;
+    --sun: #ffc83d;
+    --sun-ink: #2d2000;
+    --good: #4ddba8;
+    --good-bg: #123c34;
+    --bad: #ff7a7f;
+    --bad-bg: #4a1f2b;
+    --shadow: 0 6px 0 #0a1229;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1932; --card: #1a2750; --ink: #f1f4ff; --muted: #9fb0e0; --line: #2f4180;
+  --blue: #6f95ff; --blue-ink: #0b1430; --sun: #ffc83d; --sun-ink: #2d2000;
+  --good: #4ddba8; --good-bg: #123c34; --bad: #ff7a7f; --bad-bg: #4a1f2b;
+  --shadow: 0 6px 0 #0a1229; color-scheme: dark;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Nunito", "Trebuchet MS", system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.45;
+}
+main { max-width: 640px; margin: 0 auto; padding: 20px 18px 40px; }
+h1, h2, .display { font-family: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; }
+h1 { font-size: 2.2rem; line-height: 1.1; margin: 12px 0 6px; font-weight: 700; }
+h2 { font-size: 1.3rem; margin: 26px 0 10px; font-weight: 600; }
+p.lead { margin: 0 0 8px; color: var(--muted); }
+
+button { font: inherit; cursor: pointer; color: inherit; }
+button:focus-visible, input:focus-visible { outline: 4px solid var(--sun); outline-offset: 2px; }
+
+.chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.chip {
+  font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.4rem;
+  padding: 12px 0; border-radius: 14px; border: 3px solid var(--line);
+  background: var(--card); color: var(--ink);
+}
+.chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--blue-ink); }
+.durs { grid-template-columns: repeat(6, 1fr); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.link {
+  background: none; border: none; padding: 6px 2px; color: var(--blue);
+  font-weight: 700; text-decoration: underline; text-underline-offset: 3px;
+}
+
+.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mode {
+  text-align: left; padding: 14px; border-radius: 16px; border: 3px solid var(--line); background: var(--card);
+}
+.mode strong { display: block; font-family: "Fredoka", sans-serif; font-size: 1.2rem; }
+.mode span { color: var(--muted); font-size: .95rem; }
+.mode[aria-pressed="true"] { border-color: var(--blue); box-shadow: inset 0 0 0 2px var(--blue); }
+
+.btn {
+  font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.3rem;
+  padding: 14px 26px; border-radius: 16px; border: 0;
+  background: var(--blue); color: var(--blue-ink);
+  box-shadow: 0 5px 0 rgba(0,0,0,.25);
+}
+.btn:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0,0,0,.25); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.sun { background: var(--sun); color: var(--sun-ink); }
+.btn.good { background: var(--good); color: #05261b; }
+.btn.bad { background: var(--bad); color: #fff; }
+.btn.wide { width: 100%; }
+.start { margin-top: 28px; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.clock { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 1.9rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.clock.warn { color: var(--bad); }
+.bar { height: 14px; border-radius: 99px; background: var(--line); overflow: hidden; margin: 10px 0 4px; }
+.bar > i { display: block; height: 100%; background: var(--good); border-radius: 99px; transition: width .35s ease; }
+.bar.timed > i { background: var(--blue); transition: width .25s linear; }
+.count { color: var(--muted); font-size: .95rem; }
+
+.flash {
+  background: var(--card); border-radius: 28px; box-shadow: var(--shadow);
+  margin: 18px 0 16px; padding: 34px 16px 28px; text-align: center; border: 3px solid var(--line);
+}
+.flash.tappable { cursor: pointer; }
+.q { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(3.4rem, 18vw, 6rem); line-height: 1; letter-spacing: .01em; }
+.q .x { color: var(--blue); padding: 0 .12em; }
+.a { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: clamp(3rem, 16vw, 5.2rem); line-height: 1.1; margin-top: 12px; min-height: 1.1em; color: var(--muted); }
+.a.shown { color: var(--ink); animation: pop .25s ease-out; }
+.a.shown.good { color: var(--good); }
+.a.shown.bad { color: var(--bad); }
+@keyframes pop { from { transform: scale(.85); opacity: .3; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .a.shown { animation: none; } .bar > i { transition: none; } }
+.hint { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+
+.answer-in {
+  font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 2.6rem; text-align: center;
+  width: 190px; max-width: 70%; padding: 8px 10px; border-radius: 16px;
+  border: 3px solid var(--line); background: var(--bg); color: var(--ink); margin-top: 10px;
+}
+.msg { font-weight: 700; margin-top: 10px; min-height: 1.5em; }
+.msg.good { color: var(--good); } .msg.bad { color: var(--bad); }
+
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.actions.one { grid-template-columns: 1fr; }
+
+.done-score { font-family: "Fredoka", sans-serif; font-size: 4rem; font-weight: 700; line-height: 1; margin: 10px 0 4px; }
+.focus { background: var(--card); border: 3px solid var(--line); border-radius: 16px; padding: 12px 14px; margin-top: 14px; font-weight: 700; }
+.tablewrap { overflow-x: auto; margin-top: 4px; }
+table.stats { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+.stats th { text-align: left; font-weight: 700; color: var(--muted); font-size: .9rem; padding: 0 10px 2px; }
+.stats td, .stats tbody th { background: var(--card); padding: 10px; font-weight: 700; color: var(--ink); font-size: 1rem; white-space: nowrap; }
+.stats tbody th { font-family: "Fredoka", sans-serif; font-size: 1.25rem; border-radius: 14px 0 0 14px; border: 3px solid var(--line); border-right: 0; }
+.stats td { border-top: 3px solid var(--line); border-bottom: 3px solid var(--line); }
+.stats td:last-child { border-radius: 0 14px 14px 0; border-right: 3px solid var(--line); }
+.mini { display: inline-block; vertical-align: middle; width: 56px; height: 10px; border-radius: 99px; background: var(--line); margin-left: 8px; overflow: hidden; }
+.mini i { display: block; height: 100%; background: var(--good); }
+.mini.mid i { background: var(--sun); }
+.mini.low i { background: var(--bad); }
+.review { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.review li { background: var(--card); border: 3px solid var(--line); border-radius: 14px; padding: 10px 12px; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 1.2rem; }
+@media (max-width: 420px) { .modes, .review { grid-template-columns: 1fr; } .chips:not(.durs) { grid-template-columns: repeat(4, 1fr); } .mini { width: 36px; } }
+
+/* iOS touch polish */
+html { -webkit-text-size-adjust: 100%; }
+body { overscroll-behavior-y: none; -webkit-tap-highlight-color: transparent; }
+button, .chip, .mode, .btn, .flash { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.flash, .chip, .btn, .mode { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+</style>
+</head>
+<body>
+<main id="app"></main>
+
+<script>
+(function () {
+  var app = document.getElementById('app');
+  var tables = new Set([2, 3, 4, 5]);
+  var mode = 'flip';
+  var duration = 0;               // minutes; 0 = no timer
+  var queue = [], total = 0, firstTry = 0, missedList = [], missedKeys = {};
+  var stats = {};                 // table -> { n, ok, ms }
+  var revealed = false, graded = null; // graded: null | 'good' | 'bad'
+  var endAt = 0, timerId = null, cardStart = 0, timedOut = false;
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function buildDeck() {
+    var seen = {}, cards = [];
+    Array.from(tables).sort(function (x, y) { return x - y; }).forEach(function (t) {
+      for (var m = 1; m <= 12; m++) {
+        var key = Math.min(t, m) + 'x' + Math.max(t, m);
+        if (seen[key]) continue;
+        seen[key] = true;
+        var flip = Math.random() < 0.5;
+        cards.push({ a: flip ? t : m, b: flip ? m : t, t: t, key: key, missed: false });
+      }
+    });
+    return shuffle(cards);
+  }
+
+  function fmt(ms) {
+    var s = Math.max(0, Math.ceil(ms / 1000));
+    return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
+  }
+
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+
+  function start() {
+    stopTimer();
+    queue = buildDeck();
+    total = queue.length;
+    firstTry = 0;
+    missedList = []; missedKeys = {}; stats = {};
+    revealed = false; graded = null; timedOut = false;
+    cardStart = Date.now();
+    if (duration) {
+      endAt = Date.now() + duration * 60000;
+      timerId = setInterval(tick, 250);
+    }
+    renderPlay();
+  }
+
+  function tick() {
+    var rem = endAt - Date.now();
+    if (rem <= 0) { timedOut = true; renderDone(); return; }
+    var clock = document.getElementById('clock');
+    if (clock) { clock.textContent = fmt(rem); clock.classList.toggle('warn', rem <= 10000); }
+    var fill = document.getElementById('fill');
+    if (fill) fill.style.width = Math.round(rem / (duration * 600)) + '%';
+  }
+
+  /* ---------- Setup screen ---------- */
+  function renderSetup() {
+    stopTimer();
+    var chips = '', durs = '';
+    for (var n = 1; n <= 12; n++) {
+      chips += '<button class="chip" data-n="' + n + '" aria-pressed="' + tables.has(n) + '" aria-label="Times table ' + n + '">' + n + '</button>';
+    }
+    for (var d = 0; d <= 5; d++) {
+      durs += '<button class="chip" data-d="' + d + '" aria-pressed="' + (duration === d) + '" aria-label="' +
+        (d === 0 ? 'No timer' : d + (d === 1 ? ' minute' : ' minutes')) + '">' + (d === 0 ? 'Off' : d) + '</button>';
+    }
+    var startLabel = !tables.size ? 'Pick at least one table' :
+      duration ? 'Start ' + duration + '-minute session' : 'Start (' + buildCount() + ' cards)';
+
+    app.innerHTML =
+      '<h1>Times tables</h1>' +
+      '<p class="lead">Pick the tables you want to practice.</p>' +
+      '<h2>Tables</h2>' +
+      '<div class="chips" id="chips">' + chips + '</div>' +
+      '<div class="row"><button class="link" id="all">Select all</button><button class="link" id="none">Clear</button></div>' +
+      '<h2>How do you want to practice?</h2>' +
+      '<div class="modes">' +
+        '<button class="mode" data-mode="flip" aria-pressed="' + (mode === 'flip') + '"><strong>Flip cards</strong><span>Think of the answer, then tap the card to check it.</span></button>' +
+        '<button class="mode" data-mode="type" aria-pressed="' + (mode === 'type') + '"><strong>Type it</strong><span>Type the answer and get it checked for you.</span></button>' +
+      '</div>' +
+      '<h2>Timer (minutes)</h2>' +
+      '<div class="chips durs" id="durs">' + durs + '</div>' +
+      '<p class="lead" style="margin-top:10px">' + (duration
+        ? 'The cards keep coming until time runs out. Missed cards come back.'
+        : 'No timer. The round ends when every card is right.') + '</p>' +
+      '<button class="btn wide start" id="go"' + (tables.size ? '' : ' disabled') + '>' + startLabel + '</button>';
+
+    app.querySelectorAll('.chip[data-n]').forEach(function (b) {
+      b.onclick = function () {
+        var n = +b.dataset.n;
+        if (tables.has(n)) tables.delete(n); else tables.add(n);
+        renderSetup();
+        var again = app.querySelector('.chip[data-n="' + n + '"]');
+        if (again) again.focus();
+      };
+    });
+    app.querySelectorAll('.chip[data-d]').forEach(function (b) {
+      b.onclick = function () {
+        duration = +b.dataset.d;
+        renderSetup();
+        app.querySelector('.chip[data-d="' + duration + '"]').focus();
+      };
+    });
+    document.getElementById('all').onclick = function () { for (var i = 1; i <= 12; i++) tables.add(i); renderSetup(); };
+    document.getElementById('none').onclick = function () { tables.clear(); renderSetup(); };
+    app.querySelectorAll('.mode').forEach(function (b) {
+      b.onclick = function () { mode = b.dataset.mode; renderSetup(); app.querySelector('.mode[data-mode="' + mode + '"]').focus(); };
+    });
+    document.getElementById('go').onclick = start;
+  }
+
+  function buildCount() {
+    var seen = {}, c = 0;
+    tables.forEach(function (t) {
+      for (var m = 1; m <= 12; m++) {
+        var k = Math.min(t, m) + 'x' + Math.max(t, m);
+        if (!seen[k]) { seen[k] = 1; c++; }
+      }
+    });
+    return c;
+  }
+
+  /* ---------- Play screen ---------- */
+  function answeredCount() {
+    var n = 0; Object.keys(stats).forEach(function (k) { n += stats[k].n; }); return n;
+  }
+
+  function renderPlay() {
+    if (!queue.length) return renderDone();
+    var c = queue[0];
+    var answer = c.a * c.b;
+    var timed = duration > 0;
+    var rem = timed ? Math.max(0, endAt - Date.now()) : 0;
+    var pct = timed ? Math.round(rem / (duration * 600)) : Math.round(((total - queue.length) / total) * 100);
+
+    var answerLine = revealed
+      ? '<div class="a shown ' + (graded || '') + '" aria-live="polite">= ' + answer + '</div>'
+      : '<div class="a" aria-hidden="true">= ?</div>';
+
+    var body, actions;
+    if (mode === 'flip') {
+      body = '<div class="flash tappable" id="card" tabindex="0" role="button" aria-label="' + c.a + ' times ' + c.b + '. Tap to show the answer.">' +
+        '<div class="q">' + c.a + '<span class="x">×</span>' + c.b + '</div>' + answerLine +
+        (revealed ? '' : '<div class="hint">Tap the card to see the answer</div>') + '</div>';
+      actions = revealed
+        ? '<div class="actions"><button class="btn bad" id="miss">Missed it</button><button class="btn good" id="got">Got it</button></div>'
+        : '<div class="actions one"><button class="btn sun" id="show">Show answer</button></div>';
+    } else {
+      var msg = '';
+      if (graded === 'good') msg = '<div class="msg good">Yes! That’s right.</div>';
+      if (graded === 'bad') msg = '<div class="msg bad">Not quite. This one will come back.</div>';
+      body = '<div class="flash">' +
+        '<div class="q">' + c.a + '<span class="x">×</span>' + c.b + '</div>' + answerLine +
+        (revealed ? '' : '<input class="answer-in" id="inp" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-label="Your answer">') +
+        msg + '</div>';
+      actions = revealed
+        ? '<div class="actions one"><button class="btn" id="next">Next card</button></div>'
+        : '<div class="actions one"><button class="btn sun" id="check">Check</button></div>';
+    }
+
+    var topRight = timed
+      ? '<span class="clock' + (rem <= 10000 ? ' warn' : '') + '" id="clock" role="timer" aria-label="Time left">' + fmt(rem) + '</span>'
+      : '<span class="count">' + (total - queue.length) + ' of ' + total + ' done</span>';
+    var sub = timed ? '<div class="count">' + answeredCount() + ' answered</div>' : '';
+
+    app.innerHTML =
+      '<div class="top"><button class="link" id="back">' + (timed ? 'Quit' : 'Change tables') + '</button>' + topRight + '</div>' +
+      '<div class="bar' + (timed ? ' timed' : '') + '" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i id="fill" style="width:' + pct + '%"></i></div>' +
+      sub + body + actions;
+
+    document.getElementById('back').onclick = function () { stopTimer(); renderSetup(); };
+
+    if (mode === 'flip') {
+      var reveal = function () { if (!revealed) { revealed = true; renderPlay(); var g = document.getElementById('got'); if (g) g.focus(); } };
+      var card = document.getElementById('card');
+      card.onclick = reveal;
+      card.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reveal(); } };
+      var show = document.getElementById('show'); if (show) show.onclick = reveal;
+      var got = document.getElementById('got'); if (got) got.onclick = function () { grade(true); };
+      var miss = document.getElementById('miss'); if (miss) miss.onclick = function () { grade(false); };
+    } else {
+      var inp = document.getElementById('inp');
+      if (inp) {
+        inp.focus();
+        inp.onkeydown = function (e) { if (e.key === 'Enter') check(); };
+        document.getElementById('check').onclick = check;
+      } else {
+        var nx = document.getElementById('next');
+        nx.focus();
+        nx.onclick = function () { grade(graded === 'good'); };
+      }
+    }
+  }
+
+  function check() {
+    var inp = document.getElementById('inp');
+    var v = inp.value.trim();
+    if (v === '') { inp.focus(); return; }
+    var c = queue[0];
+    var right = parseInt(v, 10) === c.a * c.b;
+    if (right && duration) { grade(true); return; } // keep moving when the clock is running
+    graded = right ? 'good' : 'bad';
+    revealed = true;
+    renderPlay();
+  }
+
+  function grade(correct) {
+    var c = queue.shift();
+    var s = stats[c.t] || (stats[c.t] = { n: 0, ok: 0, ms: 0 });
+    s.n++; if (correct) s.ok++;
+    s.ms += Date.now() - cardStart;
+    if (correct) {
+      if (!c.missed) firstTry++;
+    } else {
+      if (!missedKeys[c.key]) { missedKeys[c.key] = true; missedList.push(c); }
+      c.missed = true;
+      queue.splice(Math.min(queue.length, 3), 0, c); // bring it back soon
+    }
+    if (!queue.length && duration) { queue = buildDeck(); total += queue.length; } // keep the deck going until time is up
+    revealed = false; graded = null;
+    cardStart = Date.now();
+    renderPlay();
+  }
+
+  /* ---------- Done screen ---------- */
+  function renderDone() {
+    stopTimer();
+    var keys = Object.keys(stats).map(Number).sort(function (a, b) { return a - b; });
+    var n = 0, ok = 0;
+    keys.forEach(function (k) { n += stats[k].n; ok += stats[k].ok; });
+    var accuracy = n ? Math.round(ok / n * 100) : 0;
+    var timed = duration > 0;
+
+    var heading, big, lead;
+    if (timed) {
+      heading = timedOut ? 'Time’s up!' : 'Session complete';
+      big = ok + ' correct';
+      lead = n ? accuracy + '% accurate, about ' + (Math.round(n / duration * 10) / 10) + ' answers a minute.' : 'No answers were recorded this time.';
+    } else {
+      heading = 'Round complete';
+      big = firstTry + ' / ' + total;
+      lead = 'right on the first try. ' + (firstTry === total ? 'Perfect round! Every card right on the first try.' :
+        firstTry >= total * 0.8 ? 'Strong round. Just a few to polish.' : 'Good work sticking with it. Practice makes these stick.');
+    }
+
+    var rows = keys.map(function (k) {
+      var s = stats[k], p = Math.round(s.ok / s.n * 100);
+      var cls = p >= 90 ? '' : p >= 70 ? ' mid' : ' low';
+      return '<tr><th scope="row">' + k + 's</th><td>' + s.ok + ' / ' + s.n + '</td>' +
+        '<td>' + p + '%<span class="mini' + cls + '"><i style="width:' + p + '%"></i></span></td>' +
+        '<td>' + (Math.round(s.ms / s.n / 100) / 10) + ' s</td></tr>';
+    }).join('');
+
+    var focus = '';
+    if (keys.length > 1) {
+      var weak = keys.filter(function (k) { return stats[k].ok < stats[k].n; }).sort(function (a, b) {
+        var pa = stats[a].ok / stats[a].n, pb = stats[b].ok / stats[b].n;
+        return pa - pb || (stats[b].ms / stats[b].n) - (stats[a].ms / stats[a].n);
+      }).slice(0, 2);
+      if (weak.length) {
+        focus = '<div class="focus">Focus next on the ' + weak.map(function (k) { return k + 's'; }).join(' and the ') + '.</div>';
+      } else {
+        var slow = keys.slice().sort(function (a, b) { return (stats[b].ms / stats[b].n) - (stats[a].ms / stats[a].n); })[0];
+        focus = '<div class="focus">No misses. The ' + slow + 's were the slowest, so speed them up next.</div>';
+      }
+    }
+
+    var table = keys.length
+      ? '<h2>By table</h2><div class="tablewrap"><table class="stats"><thead><tr><th>Table</th><th>Right</th><th>Accuracy</th><th>Avg time</th></tr></thead><tbody>' + rows + '</tbody></table></div>' + focus
+      : '';
+
+    var review = '';
+    if (missedList.length) {
+      review = '<h2>Facts to practice</h2><ul class="review">' +
+        missedList.map(function (c) { return '<li>' + c.a + ' × ' + c.b + ' = ' + (c.a * c.b) + '</li>'; }).join('') + '</ul>';
+    }
+
+    app.innerHTML =
+      '<h1>' + heading + '</h1>' +
+      '<div class="done-score">' + big + '</div>' +
+      '<p class="lead">' + lead + '</p>' + table + review +
+      '<div class="actions" style="margin-top:28px"><button class="btn sun" id="again">Play again</button><button class="btn" id="change">Change tables</button></div>';
+    document.getElementById('again').onclick = start;
+    document.getElementById('change').onclick = renderSetup;
+  }
+
+  renderSetup();
+})();
+</script>
+</body>
+</html>
